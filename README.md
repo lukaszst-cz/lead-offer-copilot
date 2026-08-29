@@ -6,6 +6,8 @@ Open-source starter i demonstracja procesu obsługi zapytań dla firm transporto
 
 **Demo online:** https://lead-offer-zm.pages.dev/
 
+**Kod:** https://github.com/lukaszst-cz/lead-offer-copilot
+
 ```
 zapytanie → wyciągnięcie danych → braki → odpowiedź → szkic oferty → mały CRM → akceptacja człowieka
 ```
