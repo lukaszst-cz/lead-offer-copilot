@@ -4,6 +4,8 @@ Open-source starter i demonstracja procesu obsługi zapytań dla firm transporto
 
 ![Widok demonstracji zapytania transportowego](assets/demo-transport.png)
 
+**Demo online:** https://lead-offer-zm.pages.dev/
+
 ```
 zapytanie → wyciągnięcie danych → braki → odpowiedź → szkic oferty → mały CRM → akceptacja człowieka
 ```
