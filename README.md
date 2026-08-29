@@ -1,6 +1,6 @@
 # Lead & Offer Copilot
 
-**Problem:** klient wysyła zapytanie przez formularz, e-mail lub komunikator. Zespół musi szybko zrozumieć temat, wychwycić braki i przygotować dobrą odpowiedź — bez wysłania czegoś automatycznie i bez kontroli.
+**Problem:** klient wysyła zapytanie przez formularz, e-mail lub komunikator. Zespół musi szybko zrozumieć temat, wychwycić braki i przygotować dobrą odpowiedź, bez wysłania czegoś automatycznie i bez kontroli.
 
 **Rozwiązanie:** demonstracja procesu obsługi zapytania: wiadomość → najważniejsze dane → braki → szkic odpowiedzi i oferty → mały CRM → zatwierdzenie człowieka.
 

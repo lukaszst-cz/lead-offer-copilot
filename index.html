@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Demo asystenta zapytań i ofert dla firm usługowych, transportowych i B2B." />
-    <title>Lead & Offer Copilot — demo</title>
+    <title>Lead & Offer Copilot, demo</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main>
       <header><a class="brand" href="#top">ZIELONA MARKA <span>/ DEMO</span></a><p>Asystent zapytań i ofert</p></header>
-      <section class="hero" id="top"><p class="eyebrow">USŁUGI · TRANSPORT · B2B</p><h1>Od zapytania do szkicu oferty — bez gubienia szczegółów.</h1><p class="lead">Wklej treść z formularza, e-maila lub WhatsAppa. System porządkuje sprawę, wskazuje braki i przygotowuje odpowiedź do zatwierdzenia.</p><p class="notice">Demo działa lokalnie w przeglądarce. Nie wysyła danych ani wiadomości.</p></section>
+      <section class="hero" id="top"><p class="eyebrow">USŁUGI · TRANSPORT · B2B</p><h1>Od zapytania do szkicu oferty, bez gubienia szczegółów.</h1><p class="lead">Wklej treść z formularza, e-maila lub WhatsAppa. System porządkuje sprawę, wskazuje braki i przygotowuje odpowiedź do zatwierdzenia.</p><p class="notice">Demo działa lokalnie w przeglądarce. Nie wysyła danych ani wiadomości.</p></section>
       <section class="templates" aria-label="Przykładowe zapytania"><button data-sector="transport" data-template="Dzień dobry, poproszę o wycenę transportu z Marki do Gdańska na 12.09. Mamy 6 palet, razem 1200 kg. kontakt@firma.pl">Transport</button><button data-sector="services" data-template="Potrzebuję montażu mebli w Markach, najlepiej jutro. Proszę o kontakt: 500 600 700.">Usługa</button><button data-sector="b2b" data-template="Firma ABC potrzebuje strony internetowej z formularzem i małym CRM. Termin: październik. kontakt@abc.pl">B2B</button></section>
       <section class="workspace"><form><label for="sector">Branża</label><select id="sector" name="sector"></select><label for="inquiry">Zapytanie klienta</label><textarea id="inquiry" rows="8" placeholder="Wklej wiadomość klienta..."></textarea><p id="error" role="alert"></p><button class="primary" type="submit">Przeanalizuj i przygotuj szkic</button></form><aside class="card sidebar"><p class="eyebrow">KOLEJKA CRM</p><h2>Sprawy zapisane lokalnie</h2><ul id="cases"></ul></aside></section>
       <section id="result" hidden aria-live="polite"></section>
