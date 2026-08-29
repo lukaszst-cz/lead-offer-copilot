@@ -1,47 +1,32 @@
 # Lead & Offer Copilot
 
-Open-source starter i demonstracja procesu obsługi zapytań dla firm transportowych, usługowych, warsztatów, beauty oraz B2B.
+**Problem:** klient wysyła zapytanie przez formularz, e-mail lub komunikator. Zespół musi szybko zrozumieć temat, wychwycić braki i przygotować dobrą odpowiedź — bez wysłania czegoś automatycznie i bez kontroli.
 
-![Widok demonstracji zapytania transportowego](assets/demo-transport.png)
+**Rozwiązanie:** demonstracja procesu obsługi zapytania: wiadomość → najważniejsze dane → braki → szkic odpowiedzi i oferty → mały CRM → zatwierdzenie człowieka.
 
-**Demo online:** https://lead-offer-zm.pages.dev/
-
-**Kod:** https://github.com/lukaszst-cz/lead-offer-copilot
-
-```
-zapytanie → wyciągnięcie danych → braki → odpowiedź → szkic oferty → mały CRM → akceptacja człowieka
-```
+[Otwórz działające demo](https://lead-offer-zm.pages.dev/)
 
 ## Co pokazuje
 
-- rozpoznawanie podstawowych danych z wklejonej wiadomości;
-- osobne wymagania dla transportu, usług, warsztatu, beauty i B2B;
-- propozycję odpowiedzi i szkic kolejnego kroku;
-- lokalne zapisanie sprawy w kolejce CRM;
-- zasadę: żadna odpowiedź nie jest wysyłana bez zatwierdzenia przez człowieka.
+- rozpoznanie podstawowych danych z wklejonej wiadomości;
+- wymagania dopasowane do transportu, usług, warsztatu, beauty i B2B;
+- szkic odpowiedzi, oferty i następnego kroku;
+- lokalną kolejkę spraw w małym CRM;
+- zasadę: człowiek zatwierdza treść przed wysłaniem.
 
-## Dla kogo
+## Wartość biznesowa
 
-- firmy transportowe, które wyceniają kursy na podstawie trasy, terminu i ładunku;
-- usługi terenowe, które potrzebują szybko doprecyzować zakres, lokalizację i termin;
-- warsztaty, salony beauty oraz firmy B2B obsługujące zapytania w wielu kanałach.
+- szybsza odpowiedź na zapytanie;
+- mniej pominiętych informacji i zgubionych leadów;
+- jednakowy standard obsługi niezależnie od kanału;
+- gotowa ścieżka do późniejszego podłączenia AI, e-maila i komunikatora.
 
-## Bezpieczeństwo demonstracji
+## Ważne ograniczenie
 
-To jest demo działające w przeglądarce: nie wysyła danych do zewnętrznego AI, e-maila ani WhatsAppa. W wersji produkcyjnej integracje i retencja danych wymagają ustalenia z klientem oraz zgodnych z prawem podstaw przetwarzania.
+To bezpieczne demo działające lokalnie w przeglądarce. Nie wysyła wiadomości i nie przekazuje danych do zewnętrznego modelu. Wersja produkcyjna wymaga ustalenia integracji, retencji danych i uprawnień.
 
 ## Testy
 
 ```bash
 npm test
 ```
-
-Testy obejmują analizę kompletnego i niekompletnego zapytania transportowego oraz usługowego.
-
-## Uruchomienie
-
-To statyczna aplikacja bez procesu instalacji. Otwórz `index.html` albo uruchom dowolny lokalny serwer HTTP w katalogu projektu.
-
-## Rozwój
-
-Zgłoszenia dotyczące konkretnych błędów lub ulepszeń są mile widziane. Szczegóły: [CONTRIBUTING.md](CONTRIBUTING.md).
