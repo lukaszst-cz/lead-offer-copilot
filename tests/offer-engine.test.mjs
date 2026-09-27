@@ -21,3 +21,30 @@ test("usługa: nie przechodzi dalej bez lokalizacji i terminu", () => {
   assert.deepEqual(result.missing, ["lokalizacja", "termin"]);
   assert.equal(result.offer.status, "Do uzupełnienia");
 });
+
+
+test("warsztat: rozpoznaje pojazd, zakres i termin", () => {
+  const result = analyzeInquiry(
+    "Toyota Corolla 2019, potrzebna wymiana hamulców. Termin jutro. tel. 500 600 700",
+    "workshop"
+  );
+  assert.deepEqual(result.missing, []);
+  assert.match(result.fields.pojazd, /Toyota Corolla/);
+  assert.equal(result.offer.status, "Szkic gotowy");
+});
+
+test("beauty: rozpoznaje usługę i termin", () => {
+  const result = analyzeInquiry("Poproszę manicure jutro, najlepiej po południu.", "beauty");
+  assert.deepEqual(result.missing, []);
+  assert.match(result.fields.usluga, /manicure/i);
+});
+
+test("B2B: rozpoznaje firmę, zakres i termin", () => {
+  const result = analyzeInquiry(
+    "Firma ABC potrzebuje strony internetowej z formularzem i CRM. Termin 12.10.2026.",
+    "b2b"
+  );
+  assert.deepEqual(result.missing, []);
+  assert.equal(result.offer.status, "Szkic gotowy");
+  assert.match(result.fields.firma, /ABC/);
+});
