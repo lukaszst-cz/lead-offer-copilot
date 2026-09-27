@@ -48,3 +48,14 @@ test("B2B: rozpoznaje firmę, zakres i termin", () => {
   assert.equal(result.offer.status, "Szkic gotowy");
   assert.match(result.fields.firma, /ABC/);
 });
+
+
+test("puste zapytanie kończy się czytelnym błędem", () => {
+  assert.throws(() => analyzeInquiry("   ", "services"), /Wklej treść zapytania/);
+});
+
+test("nieznany sektor korzysta z bezpiecznego zestawu usług", () => {
+  const result = analyzeInquiry("Potrzebuję montażu mebli w Markach jutro.", "unknown");
+  assert.equal(result.sectorLabel, "Usługi");
+  assert.equal(result.crm.approvalRequired, true);
+});
