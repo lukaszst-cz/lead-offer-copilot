@@ -10,7 +10,12 @@ const templateButtons = document.querySelectorAll("[data-template]");
 const escapeHtml = (value) => String(value).replace(/[&<>\"']/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#039;" })[character]);
 
 function savedCases() {
-  return JSON.parse(localStorage.getItem("loc-demo-cases") || "[]");
+  try {
+    const value = JSON.parse(localStorage.getItem("loc-demo-cases") || "[]");
+    return Array.isArray(value) ? value : [];
+  } catch {
+    return [];
+  }
 }
 
 function renderCases() {
@@ -51,8 +56,10 @@ function showResult(data) {
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
+  const errorBox = document.querySelector("#error");
+  errorBox.textContent = "";
   try { showResult(analyzeInquiry(inquiry.value, sector.value)); }
-  catch (error) { document.querySelector("#error").textContent = error.message; }
+  catch (error) { errorBox.textContent = error.message; }
 });
 
 templateButtons.forEach((button) => button.addEventListener("click", () => {
