@@ -1,10 +1,14 @@
 # Lead & Offer Copilot
 
+[![Test](https://github.com/lukaszst-cz/lead-offer-copilot/actions/workflows/test.yml/badge.svg)](https://github.com/lukaszst-cz/lead-offer-copilot/actions/workflows/test.yml)
+
 **Problem:** klient wysyła zapytanie przez formularz, e-mail lub komunikator. Zespół musi szybko zrozumieć temat, wychwycić braki i przygotować dobrą odpowiedź, bez wysłania czegoś automatycznie i bez kontroli.
 
 **Rozwiązanie:** demonstracja procesu obsługi zapytania: wiadomość → najważniejsze dane → braki → szkic odpowiedzi i oferty → mały CRM → zatwierdzenie człowieka.
 
 [Otwórz działające demo](https://lead-offer-zm.pages.dev/)
+
+![Lead & Offer Copilot](assets/demo-transport.png)
 
 ## Co pokazuje
 
@@ -30,3 +34,11 @@ To bezpieczne demo działające lokalnie w przeglądarce. Nie wysyła wiadomośc
 ```bash
 npm test
 ```
+
+
+## Technicznie
+
+- statyczna aplikacja JavaScript bez backendu;
+- dane kolejki demo są przechowywane lokalnie w przeglądarce;
+- demo nie wykonuje połączeń z zewnętrznym modelem AI;
+- logika analizy zapytania jest wydzielona w `lib/offer-engine.mjs` i objęta testami Node.js.
