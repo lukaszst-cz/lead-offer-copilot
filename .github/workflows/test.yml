@@ -4,6 +4,13 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -31,3 +38,12 @@ jobs:
               print('Missing local assets:', *missing, sep='\n- ')
               sys.exit(1)
           PY
+
+      - name: Check local-only demo contract
+        run: |
+          grep -Fq "Nie wysyła danych ani wiadomości" index.html
+          grep -Fq "approvalRequired: true" lib/offer-engine.mjs
+          if grep -E '\b(fetch|XMLHttpRequest|WebSocket)\s*\(' app.js lib/offer-engine.mjs; then
+            echo "External network code found in local-only demo."
+            exit 1
+          fi
